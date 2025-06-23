@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mercadola do Gabola</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header id="app-header" class="hidden">
+    <div class="header-left">
+      <h1>Mercadola do Gabola</h1>
+    </div>
+    <div class="header-right">
+      <span id="greeting"></span>
+      <button id="logout-btn" class="btn small-btn">Sair</button>
+      <div id="cart-button" class="cart-button">
+        🛒 <span id="cart-count" class="cart-count">0</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="login-container" class="login-container">
+      <h2>Login</h2>
+      <form id="login-form">
+        <div class="form-group">
+          <label for="username">Nome:</label>
+          <input type="text" id="username" required>
+        </div>
+        <div class="form-group">
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Senha:</label>
+          <input type="password" id="password" required>
+        </div>
+        <button type="submit" class="btn">Entrar</button>
+      </form>
+    </section>
+    <section id="catalog-section" class="hidden">
+      <div id="product-catalog" class="product-catalog"></div>
+    </section>
+  </main>
+  <div id="cart-modal" class="cart-modal">
+    <div class="cart-modal-content">
+      <span id="cart-close" class="cart-close">&times;</span>
+      <h2>Seu Carrinho</h2>
+      <div id="cart-items" class="cart-items"></div>
+      <div class="cart-summary">
+        <p>Total: R$ <span id="cart-total">0.00</span></p>
+      </div>
+      <div class="cart-actions">
+        <button id="clear-cart" class="btn small-btn">Esvaziar Carrinho</button>
+        <button id="checkout-btn" class="btn small-btn">Finalizar Compra</button>
+      </div>
+    </div>
+  </div>
+  <div id="checkout-modal" class="cart-modal">
+    <div class="cart-modal-content">
+      <span id="checkout-close" class="cart-close">&times;</span>
+      <h2>Checkout</h2>
+      <form id="checkout-form">
+        <div class="form-group">
+          <label for="customer-name">Nome completo:</label>
+          <input type="text" id="customer-name" required>
+        </div>
+        <div class="form-group">
+          <label for="customer-address">Endereço de entrega:</label>
+          <textarea id="customer-address" rows="3" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="payment-method">Método de pagamento:</label>
+          <select id="payment-method" required>
+            <option value="">Selecione...</option>
+            <option value="Cartão de Crédito">Cartão de Crédito</option>
+            <option value="Boleto">Boleto</option>
+            <option value="Pix">Pix</option>
+          </select>
+        </div>
+        <div id="credit-card-fields" class="hidden">
+            <div class="form-group">
+                <label for="card-number">Número do cartão:</label>
+                <input 
+                type="text" 
+                id="card-number" 
+                placeholder="1234 5678 9012 3456"
+                maxlength="19"
+                inputmode="numeric"
+                autocomplete="cc-number"
+                required>
+            </div>
+            <div class="form-group">
+                <label for="card-expiry">Validade (MM/AA):</label>
+                <input 
+                type="text" 
+                id="card-expiry" 
+                placeholder="MM/AA"
+                maxlength="5"
+                inputmode="numeric"
+                autocomplete="cc-exp"
+                required>
+            </div>
+            <div class="form-group">
+                <label for="card-cvv">CVV:</label>
+                <input 
+                type="text" 
+                id="card-cvv" 
+                placeholder="123"
+                maxlength="3"
+                inputmode="numeric"
+                autocomplete="cc-csc"
+                required>
+            </div>
+        </div>
+        <div class="checkout-actions">
+          <button type="submit" class="btn">Confirmar Pedido</button>
+        </div>
+      </form>
+      <div id="order-confirmation" class="hidden">
+      </div>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
