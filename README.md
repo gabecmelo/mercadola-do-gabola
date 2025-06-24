@@ -45,4 +45,4 @@ A aplicação está hospedada no GitHub Pages:
 
 ## Licença
 
-Este projeto está licenciado sob a **MIT License**. Veja o arquivo [LICENSE](LICENSE) para detalhes completos.
+Este projeto está licenciado sob a **MIT License © 2025**. Veja o arquivo [LICENSE](LICENSE) para detalhes completos.
